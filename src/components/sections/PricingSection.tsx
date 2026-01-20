@@ -1,5 +1,7 @@
+import { useState } from "react";
 import { SectionWrapper } from "@/components/ui/section-wrapper";
 import { CTAButton } from "@/components/ui/cta-button";
+import { LeadCaptureDialog } from "@/components/ui/lead-capture-dialog";
 import { Check, Shield, Clock } from "lucide-react";
 
 const includedItems = [
@@ -10,6 +12,8 @@ const includedItems = [
 ];
 
 const PricingSection = () => {
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+
   return (
     <SectionWrapper variant="gradient" id="pricing">
       <div className="text-center mb-12">
@@ -56,7 +60,12 @@ const PricingSection = () => {
             </div>
 
             {/* CTA */}
-            <CTAButton variant="hero" size="xl" className="w-full mb-6">
+            <CTAButton 
+              variant="hero" 
+              size="xl" 
+              className="w-full mb-6"
+              onClick={() => setIsDialogOpen(true)}
+            >
               GARANTIR MINHA VAGA AGORA
             </CTAButton>
 
@@ -80,6 +89,8 @@ const PricingSection = () => {
           ⚠️ Vagas limitadas para garantir qualidade na mentoria ao vivo
         </p>
       </div>
+
+      <LeadCaptureDialog open={isDialogOpen} onOpenChange={setIsDialogOpen} />
     </SectionWrapper>
   );
 };
