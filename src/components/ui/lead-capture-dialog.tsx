@@ -26,10 +26,25 @@ export function LeadCaptureDialog({ open, onOpenChange }: LeadCaptureDialogProps
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate submission - replace with actual API call
-    console.log("Lead captured:", { name, email, phone });
-    
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    try {
+      await fetch("https://n8n-webhook.nexxusacademy.com.br/webhook/workshop-cadastro", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        mode: "no-cors",
+        body: JSON.stringify({
+          name,
+          email,
+          phone,
+          timestamp: new Date().toISOString(),
+        }),
+      });
+      
+      console.log("Lead captured:", { name, email, phone });
+    } catch (error) {
+      console.error("Error sending data:", error);
+    }
     
     setIsSubmitting(false);
     onOpenChange(false);
