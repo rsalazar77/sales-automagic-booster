@@ -40,18 +40,13 @@ export function LeadCaptureDialog({ open, onOpenChange }: LeadCaptureDialogProps
         }),
       });
       
-      console.log("Lead captured:", { name, email, phone });
+      // Redirect to Kiwify payment page
+      window.location.href = "https://pay.kiwify.com.br/xxYpPdB";
     } catch (error) {
       console.error("Error sending data:", error);
+      // Even if webhook fails, redirect to payment page
+      window.location.href = "https://pay.kiwify.com.br/xxYpPdB";
     }
-    
-    setIsSubmitting(false);
-    onOpenChange(false);
-    
-    // Reset form
-    setName("");
-    setEmail("");
-    setPhone("");
   };
 
   const formatPhone = (value: string) => {
