@@ -1,5 +1,6 @@
 import { SectionWrapper } from "@/components/ui/section-wrapper";
-import { Award, Zap } from "lucide-react";
+import { Award } from "lucide-react";
+import ruanPhoto from "@/assets/ruan-photo.jpg";
 
 const InstructorSection = () => {
   return (
@@ -13,10 +14,11 @@ const InstructorSection = () => {
       <div className="max-w-2xl mx-auto">
         <div className="bg-card rounded-3xl p-8 shadow-xl border border-border">
           <div className="flex flex-col md:flex-row items-center gap-8">
-            {/* Avatar placeholder */}
-            <div className="w-32 h-32 bg-gradient-to-br from-primary to-cta rounded-full flex items-center justify-center flex-shrink-0">
-              <span className="text-4xl font-bold text-white">R</span>
-            </div>
+            <img 
+              src={ruanPhoto} 
+              alt="Ruan - Especialista em automação com IA"
+              className="w-32 h-32 rounded-full object-cover flex-shrink-0 border-4 border-cta/20"
+            />
 
             <div className="text-center md:text-left">
               <h3 className="text-2xl font-bold text-foreground mb-2">Ruan</h3>
