@@ -20,7 +20,7 @@ const FinalCTASection = () => {
           Última Chance de Garantir sua Vaga
         </h2>
         <p className="text-gray-300 max-w-2xl mx-auto mb-8">
-          Sábado, 21/03, às 9h. Você sai com um sistema completo de recuperação
+          Domingo, 31/01, às 9h. Você sai com um sistema completo de recuperação
           de vendas funcionando.
         </p>
 
