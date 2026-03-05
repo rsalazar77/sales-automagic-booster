@@ -27,7 +27,7 @@ const HeroSection = () => {
         {/* Event badge */}
         <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-4 py-2 mb-6 animate-fade-in">
           <Calendar className="w-4 h-4 text-primary" />
-          <span className="text-sm font-medium text-primary">Domingo, 31/01</span>
+          <span className="text-sm font-medium text-primary"><span className="text-sm font-medium text-primary">Sábado, 21/03</span></span>
           <span className="w-1 h-1 bg-primary/40 rounded-full" />
           <Clock className="w-4 h-4 text-primary" />
           <span className="text-sm font-medium text-primary">9h–13h (BRT)</span>
